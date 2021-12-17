@@ -1,8 +1,31 @@
 
-function btnClick() {
-    console.log("点击了此元素")
-}
 
 console.log("加载了index.js文件")
 
-$("#part-input").innerHTML = "JS文件修改了此文本内容!!!"
+let PROJECT = '';
+
+function loadProjectManagement() {
+    $.ajax({
+    url: '/load-project',
+    success: function (result) {
+        PROJECT = result
+        for (let j=0; j<result.project.length; j++) {
+            let ele = `<option value=${result.project[j]}>${result.project[j]}</option>>`
+            $("#project-select").append(ele)
+        }
+    }})
+}
+
+
+$(document).ready(function(){
+
+    $('input[disabled="true"]').css("background", "darkgray")
+
+    $('#project-select').change(function(){
+
+        let project=$(this).children('option:selected').val();//这就是selected的值
+        let idx = PROJECT.project.indexOf(project)
+        $('input[name="sop"]').val(PROJECT.sop[idx])
+        $('input[name="tma"]').val(PROJECT.tma[idx])
+    })
+})
