@@ -13,8 +13,9 @@ function loadProjectInformation () {
         success: function (result) {
             let keys_ = result.data.keys
             let items = result.data.items
+            $('#my-table tbody').empty()
             if(items) {
-                $('#nullData').remove()
+                //$('#nullData').remove()
                 for (let i=0; i<keys_.length; i++) {
                     if (keys_[i] === 'id') {
                         continue
@@ -34,7 +35,7 @@ function loadProjectInformation () {
                 }
             }
             else {
-                $("#my-table").append(`<p id="nullData">${result.msg}</p>`)
+                $("#my-table tbody").append(`<p id="nullData">${result.msg}</p>`)
             }
         }})
     }
