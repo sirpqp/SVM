@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>part-query</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="static/css/part-query.css" />
+        <script src="static/js/jquery-3.5.1.min.js"></script>
+        <script src="static/js/uikit.min.js"></script>
+        <script src="static/js/uikit-icons.min.js"></script>
+        <script src="static/js/bootstrap.js"></script>
+        <script src="static/js/part-query.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+        <script src="static/js/jquery.table2excel.min.js"></script>
+    </head>
+    <body>
+
+        <!--START 查询条件-->
+
+        <div class="ev-section-light ev-bottom-border">
+
+            <div class="ev-container ev-section-padding-v-m ev-advanced-search">
+
+                <div class="ev-title-dark uk-text-center uk-margin-remove-top">
+                    <p>Find Your</p>
+                    <h3>Project Information</h3>
+                </div>
+
+                <form class="uk-grid-small" uk-grid>
+
+                    <div class="uk-width-1-2 uk-width-1-2@s uk-width-1-4@m">
+                        <div class="uk-margin">
+                            <div class="uk-width-1-1 uk-inline">
+                                <label>项目: <input class="uk-input" type="text" name="project"></label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="uk-width-1-2 uk-width-1-2@s uk-width-1-4@m">
+                        <div class="uk-margin">
+                            <div class="uk-width-1-1 uk-inline">
+                                <label>零件号: <input class="uk-input" type="text" name="lingjianhao"></label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="uk-width-1-1@s uk-width-1-6@m">
+                        <div class="uk-margin">
+                            <label class="uk-button uk-button-primary uk-button-large uk-border-rounded uk-margin-small-top uk-width-1-1 uk-text-truncate" onclick="loadProjectInformation()">Search <i class="fas fa-angle-right uk-margin-small-left"></i></label>
+                        </div>
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+
+        <!--END 查询条件-->
+
+
+        <!--START 查询结果-->
+        <div class="ev-cont">
+            <div class="ev-container">
+                <div class="ev-widgets uk-grid-large" uk-grid>
+
+                    <!-- Table -->
+                    <table class="uk-table uk-table-divider" id="my-table">
+
+                        <tbody>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+        <!--START 查询结果-->
+
+
+        <!--START 导出结果-->
+
+        <div class="ev-cont">
+            <div class="ev-container">
+                <div class="ev-widgets uk-grid-large" uk-grid>
+                    <label id="export" class="uk-button uk-button-primary uk-button-large uk-border-rounded uk-margin-small-top uk-width-1-1 uk-text-truncate" onclick="table2excel()">Export as excel<i class="fas fa-angle-right uk-margin-small-left"></i></label>
+                </div>
+            </div>
+        </div>
+
+        <!--START 导出结果-->
+
+
+        <script src="static/js/nice-select.min.js"></script>
+        <script src="static/js/moment.min.js"></script>
+        <script src="static/js/daterangepicker.js"></script>
+        <script src="static/js/fontawesome.min.js"></script>
+        <script src="static/js/main.js"></script>
+
+
+    </body>
+</html>

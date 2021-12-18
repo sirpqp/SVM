@@ -1,4 +1,0 @@
-
-function BtnAjax(ths) {
-
-}

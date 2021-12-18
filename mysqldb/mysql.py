@@ -1,6 +1,5 @@
 import pymysql
-from pymysql.connections import Connection
-from pymysql.cursors import SSDictCursor, SSCursor, DictCursor
+from pymysql.cursors import DictCursor
 
 
 def sql_from_dict(item: dict, table: str, filter_keys=None):
